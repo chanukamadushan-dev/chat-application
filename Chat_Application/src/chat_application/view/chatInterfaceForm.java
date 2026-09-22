@@ -12,6 +12,10 @@ public class chatInterfaceForm extends javax.swing.JFrame {
     private String userName;
     private   ChatInterfaceFormController controller;
     private int userCount = 1;
+    
+    public String getUserName(){
+        return userName;
+    }
 
     public chatInterfaceForm(String userName, ChatInterfaceFormController controller) {
         initComponents();
