@@ -1,20 +1,16 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
+
 package chat_application;
 
-/**
- *
- * @author Pamod
- */
+import chat_application.controller.ChatInterfaceFormController;
+import chat_application.view.chatInterfaceForm;
+
 public class Chat_Application {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
-    }
     
+    public static void main(String[] args) {
+        ChatInterfaceFormController formControler = new ChatInterfaceFormController();
+        
+        new chatInterfaceForm("user1", formControler).setVisible(true);
+    }
+   
 }
