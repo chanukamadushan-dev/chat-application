@@ -10,7 +10,7 @@ public class chatInterfaceForm extends javax.swing.JFrame {
 
     private String userName;
     private ChatInterfaceFormController controller;
-    private int userCount = 1;
+   
 
     public String getUserName() {
         return userName;
@@ -40,7 +40,6 @@ public class chatInterfaceForm extends javax.swing.JFrame {
 
         txtField = new javax.swing.JTextField();
         btnSend = new javax.swing.JButton();
-        btnAddUser = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtChatArea = new javax.swing.JTextArea();
         btnManageUsers = new javax.swing.JButton();
@@ -51,9 +50,6 @@ public class chatInterfaceForm extends javax.swing.JFrame {
 
         btnSend.setText("Send");
         btnSend.addActionListener(this::btnSendActionPerformed);
-
-        btnAddUser.setText("Add user");
-        btnAddUser.addActionListener(this::btnAddUserActionPerformed);
 
         txtChatArea.setColumns(20);
         txtChatArea.setRows(5);
@@ -74,11 +70,7 @@ public class chatInterfaceForm extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(btnSend))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addGap(136, 136, 136)
-                                .addComponent(btnAddUser, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(36, 36, 36)
                         .addComponent(btnManageUsers)))
                 .addContainerGap(25, Short.MAX_VALUE))
@@ -86,14 +78,12 @@ public class chatInterfaceForm extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addComponent(btnAddUser)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(58, 58, 58)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(48, 48, 48)
+                        .addGap(94, 94, 94)
                         .addComponent(btnManageUsers, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -114,16 +104,6 @@ public class chatInterfaceForm extends javax.swing.JFrame {
             txtField.setText("");
         }
     }//GEN-LAST:event_btnSendActionPerformed
-
-    private void btnAddUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddUserActionPerformed
-        userCount++;
-
-        String newUserName = "user" + userCount;
-
-        chatInterfaceForm newUser = new chatInterfaceForm(newUserName, controller);
-
-        newUser.setVisible(true);
-    }//GEN-LAST:event_btnAddUserActionPerformed
 
     private void txtFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFieldActionPerformed
         btnSendActionPerformed(evt);
@@ -147,7 +127,6 @@ public class chatInterfaceForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAddUser;
     private javax.swing.JButton btnManageUsers;
     private javax.swing.JButton btnSend;
     private javax.swing.JScrollPane jScrollPane1;

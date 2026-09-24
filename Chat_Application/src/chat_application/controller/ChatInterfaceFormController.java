@@ -11,14 +11,13 @@ public class ChatInterfaceFormController {
 
     public void addUser(chatInterfaceForm user) {
         users.add(user);
-        String userName = user.getName();
-        
-        if(!addedUsers.contains(userName)){
+        String userName = user.getUserName();
+        if (!addedUsers.contains(userName)) {
             addedUsers.add(userName);
         }
     }
-    
-    public ArrayList<String> getAddedUsers(){
+
+    public ArrayList<String> getAddedUsers() {
         return addedUsers;
     }
 
@@ -33,22 +32,22 @@ public class ChatInterfaceFormController {
 
         }
     }
-    
-    public void removeUser(chatInterfaceForm user){
+
+    public void removeUser(chatInterfaceForm user) {
         users.remove(user);
     }
-    
-    public void openUser(String userName){
-        
-        for (chatInterfaceForm user : users){
-            
-            if(user.getUserName().equals(userName)){
+
+    public void openUser(String userName) {
+
+        for (chatInterfaceForm user : users) {
+
+            if (user.getUserName().equals(userName)) {
                 user.setVisible(true);
                 user.toFront();
                 return;
             }
         }
-        
+
         chatInterfaceForm newUser = new chatInterfaceForm(userName, this);
         newUser.setVisible(true);
     }

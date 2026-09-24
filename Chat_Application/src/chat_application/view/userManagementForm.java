@@ -22,6 +22,7 @@ public class userManagementForm extends javax.swing.JFrame {
 
         for (String user : controller.getAddedUsers()) {
             CmbAddedUsers.addItem(user);
+           
         }
     }
 
@@ -39,6 +40,7 @@ public class userManagementForm extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         CmbAddedUsers.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        CmbAddedUsers.addActionListener(this::CmbAddedUsersActionPerformed);
 
         lblAddedUsers.setText("Added Users");
 
@@ -104,7 +106,13 @@ public class userManagementForm extends javax.swing.JFrame {
         chatInterfaceForm newUser = new chatInterfaceForm(newUserName, controller);
 
         newUser.setVisible(true);
+        txtUsers.setText("");
+        loadUsers();
     }//GEN-LAST:event_btnAddUsersActionPerformed
+
+    private void CmbAddedUsersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CmbAddedUsersActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CmbAddedUsersActionPerformed
 
     public static void main(String args[]) {
 
